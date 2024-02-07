@@ -7,11 +7,13 @@
 :set softtabstop=2
 :set mouse=a
 
-
 call plug#begin('/home/alha/.config/nvim/plugged')
 
+Plug 'glepnir/dashboard-nvim', { 'branch': 'master' }
+Plug 'https://github.com/nvim-lua/plenary.nvim'
+Plug 'https://github.com/nvim-neo-tree/neo-tree.nvim'
+Plug 'MunifTanjim/nui.nvim'
 Plug 'https://github.com/vim-airline/vim-airline'
-Plug 'https://github.com/preservim/nerdtree'
 Plug 'http://github.com/tpope/vim-surround'
 Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
 Plug 'https://github.com/vim-airline/vim-airline' " Status bar
@@ -25,18 +27,20 @@ Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple c
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
-Plug 'neovim/nvim-lspconfig'
 Plug 'kabouzeid/nvim-lspinstall'
 Plug 'lewis6991/gitsigns.nvim' " OPTIONAL: for git status
 Plug 'nvim-tree/nvim-web-devicons' " OPTIONAL: for file icons
 Plug 'romgrk/barbar.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'https://github.com/nvim-neo-tree/neo-tree.nvim'
 
 call plug#end()
 
 lua require('mason_config')
+lua require('nvim-tree_config')
 
 " Mapping
-nnoremap <f5> :NERDTreeToggleVCS<CR>
+nnoremap <f5> :Neotree toggle reveal position=float<CR>
 nnoremap <F8> :TagbarToggle<CR>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> :bprev<CR>
@@ -48,16 +52,39 @@ inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 :set completeopt-=preview " For No Previews
 :colorscheme jellybeans
 
-let g:coc_node_path = '/home/alha/.config/nvm/versions/node/v21.6.1/bin/node'
+let g:coc_node_path = '/usr/bin/node'
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
 
-" Exit Vim if NERDTree is the only window remaining in the only tab.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" Neotree
+autocmd QuitPre * if tabpagenr('$') ==  1 && winnr('$') ==  1 && exists('b:Neotree') && b:Neotree.isTabTree() | quitall | endif
 
-" Example for init.vim
-hi BufferTabpageFill guibg=#222222
-highlight BarbarTabActive guibg=#222222 guifg=#222222
-" ... Add other highlight groups as needed
+"augroup NeotreeOnStart
+"  autocmd!
+"  autocmd VimEnter * Neotree
+"augroup END
+"Neotree
 
+" BarBar
+" BarBar
 
+" Dashboard
+" Enable the dashboard
+let g:dashboard_enable_at_startup =  1
+
+" Custom header
+let g:dashboard_custom_header = {
+\ 'type': 'text',
+\ 'content': ['Hello, World!']
+\ }
+
+" Dashboard footer
+let g:dashboard_footer_icon = '😄'
+let g:dashboard_footer_desc = {
+\ 'type': 'text',
+\ 'content': ['Dashboard Footer Description']
+\ }
+
+" Session load path
+let g:dashboard_session_directory = $HOME . "/.config/nvim/session"
+" Dashboard
