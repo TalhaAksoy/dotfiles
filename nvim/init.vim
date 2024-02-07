@@ -15,36 +15,41 @@
 
 call plug#begin('/home/alha/.config/nvim/plugged')
 
-Plug 'vim-airline/vim-airline-themes'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
+Plug 'chikko80/error-lens.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'folke/lsp-colors.nvim',
+Plug 'https://github.com/chikko80/error-lens.nvim',
+Plug 'vim-airline/vim-airline-themes',
 Plug 'glepnir/dashboard-nvim', { 'branch': 'master' }
-Plug 'https://github.com/nvim-lua/plenary.nvim'
-Plug 'https://github.com/nvim-neo-tree/neo-tree.nvim'
-Plug 'MunifTanjim/nui.nvim'
-Plug 'http://github.com/tpope/vim-surround'
-Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
-Plug 'https://github.com/vim-airline/vim-airline' " Status bar
-Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
-Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
+Plug 'https://github.com/nvim-lua/plenary.nvim',
+Plug 'https://github.com/nvim-neo-tree/neo-tree.nvim',
+Plug 'MunifTanjim/nui.nvim',
+Plug 'http://github.com/tpope/vim-surround',
+Plug 'https://github.com/tpope/vim-commentary', " For Commenting gcc & gc
+Plug 'https://github.com/vim-airline/vim-airline', " Status bar
+Plug 'https://github.com/ap/vim-css-color', " CSS Color Preview
+Plug 'https://github.com/rafi/awesome-vim-colorschemes', " Retro Scheme
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
-Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
-Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
-Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
-Plug 'williamboman/mason.nvim'
-Plug 'williamboman/mason-lspconfig.nvim'
-Plug 'neovim/nvim-lspconfig'
-Plug 'kabouzeid/nvim-lspinstall'
-Plug 'lewis6991/gitsigns.nvim' " OPTIONAL: for git status
-Plug 'nvim-tree/nvim-web-devicons' " OPTIONAL: for file icons
-Plug 'romgrk/barbar.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'https://github.com/nvim-neo-tree/neo-tree.nvim'
+Plug 'https://github.com/ryanoasis/vim-devicons', " Developer Icons
+Plug 'https://github.com/tc50cal/vim-terminal', " Vim Terminal
+Plug 'https://github.com/preservim/tagbar', " Tagbar for code navigation
+Plug 'https://github.com/terryma/vim-multiple-cursors', " CTRL + N for multiple cursors
+Plug 'williamboman/mason.nvim',
+Plug 'williamboman/mason-lspconfig.nvim',
+Plug 'neovim/nvim-lspconfig',
+Plug 'kabouzeid/nvim-lspinstall',
+Plug 'lewis6991/gitsigns.nvim', " OPTIONAL: for git status
+Plug 'nvim-tree/nvim-web-devicons', " OPTIONAL: for file icons
+Plug 'romgrk/barbar.nvim',
+Plug 'kyazdani42/nvim-web-devicons',
+Plug 'https://github.com/nvim-neo-tree/neo-tree.nvim',
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
 call plug#end()
 
 lua require('mason_config')
 lua require('nvim-tree_config')
+lua require('error-lens_config')
 "source ./minimalist.vim
 
 " Mapping
@@ -61,6 +66,7 @@ inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 
 :set completeopt-=preview " For No Previews
 :colorscheme catppuccin-mocha
+":colorscheme onedark
 
 let g:coc_node_path = '/usr/bin/node'
 
