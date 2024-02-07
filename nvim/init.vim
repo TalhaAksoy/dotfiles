@@ -33,6 +33,7 @@ Plug 'nvim-tree/nvim-web-devicons' " OPTIONAL: for file icons
 Plug 'romgrk/barbar.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'https://github.com/nvim-neo-tree/neo-tree.nvim'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
 call plug#end()
 
@@ -50,7 +51,7 @@ inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 " Mapping
 
 :set completeopt-=preview " For No Previews
-:colorscheme jellybeans
+:colorscheme catppuccin-mocha
 
 let g:coc_node_path = '/usr/bin/node'
 let g:NERDTreeDirArrowExpandable="+"
