@@ -50,10 +50,10 @@ lua require('nvim-tree_config')
 " Mapping
 nnoremap <f5> :Neotree toggle reveal position=float<CR>
 nnoremap <F8> :TagbarToggle<CR>
-nnoremap <C-Left> <C-w>h
-nnoremap <C-Right> <C-w>l
-nnoremap <C-j> :bprev<CR>
-nnoremap <C-l> :bnext<CR>
+nnoremap <C-j> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-Left> :bprev<CR>
+nnoremap <C-Right> :bnext<CR>
 nnoremap <C-w> :BufferClose<CR>
 
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
