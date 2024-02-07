@@ -4,16 +4,22 @@
 :set tabstop=2
 :set shiftwidth=2
 :set smarttab
+:set expandtab
 :set softtabstop=2
 :set mouse=a
+:set clipboard=unnamedplus
+:set completeopt=menu,menuone,noselect
+:set cursorline
+:set splitbelow
+:set splitright
 
 call plug#begin('/home/alha/.config/nvim/plugged')
 
+Plug 'vim-airline/vim-airline-themes'
 Plug 'glepnir/dashboard-nvim', { 'branch': 'master' }
 Plug 'https://github.com/nvim-lua/plenary.nvim'
 Plug 'https://github.com/nvim-neo-tree/neo-tree.nvim'
 Plug 'MunifTanjim/nui.nvim'
-Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'http://github.com/tpope/vim-surround'
 Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
 Plug 'https://github.com/vim-airline/vim-airline' " Status bar
@@ -39,6 +45,7 @@ call plug#end()
 
 lua require('mason_config')
 lua require('nvim-tree_config')
+"source ./minimalist.vim
 
 " Mapping
 nnoremap <f5> :Neotree toggle reveal position=float<CR>
@@ -47,6 +54,7 @@ nnoremap <C-Left> <C-w>h
 nnoremap <C-Right> <C-w>l
 nnoremap <C-j> :bprev<CR>
 nnoremap <C-l> :bnext<CR>
+nnoremap <C-w> :BufferClose<CR>
 
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 " Mapping
@@ -89,3 +97,17 @@ let g:dashboard_footer_desc = {
 " Session load path
 let g:dashboard_session_directory = $HOME . "/.config/nvim/session"
 " Dashboard
+
+
+"let g:airline_theme='ayu_dark'                                                                                                             
+"let g:airline_powerline_fonts = 1                                                                                                         
+"let g:airline_section_b = '%{getcwd()}' " in section B of the status line display the CWD
+" Disable whitespace checks in Vim Airline
+"let g:airline#extensions#whitespace#enabled =  0
+
+" Set the current directory to display in the status line
+"let g:airline#extensions#branch#displayed_head_limit =  1
+"let g:airline#extensions#branch#format = '%{getcwd()}'
+
+" Remove trailing whitespace indicator from Vim Airline
+"let g:airline_skip_empty_sections =  1                                    
