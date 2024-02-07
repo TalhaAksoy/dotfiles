@@ -43,7 +43,8 @@ lua require('nvim-tree_config')
 " Mapping
 nnoremap <f5> :Neotree toggle reveal position=float<CR>
 nnoremap <F8> :TagbarToggle<CR>
-nnoremap <C-h> <C-w>h
+nnoremap <C-Left> <C-w>h
+nnoremap <C-Right> <C-w>l
 nnoremap <C-j> :bprev<CR>
 nnoremap <C-l> :bnext<CR>
 
@@ -54,11 +55,10 @@ inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 :colorscheme catppuccin-mocha
 
 let g:coc_node_path = '/usr/bin/node'
-let g:NERDTreeDirArrowExpandable="+"
-let g:NERDTreeDirArrowCollapsible="~"
 
 " Neotree
 autocmd QuitPre * if tabpagenr('$') ==  1 && winnr('$') ==  1 && exists('b:Neotree') && b:Neotree.isTabTree() | quitall | endif
+autocmd BufEnter * if exists(':Neotree close') | :Neotree close | endif
 
 "augroup NeotreeOnStart
 "  autocmd!
