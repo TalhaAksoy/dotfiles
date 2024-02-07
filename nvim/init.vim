@@ -15,6 +15,8 @@
 
 call plug#begin('/home/alha/.config/nvim/plugged')
 
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'mhartington/formatter.nvim',
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
 Plug 'chikko80/error-lens.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'folke/lsp-colors.nvim',
@@ -116,4 +118,11 @@ let g:dashboard_session_directory = $HOME . "/.config/nvim/session"
 "let g:airline#extensions#branch#format = '%{getcwd()}'
 
 " Remove trailing whitespace indicator from Vim Airline
-"let g:airline_skip_empty_sections =  1                                    
+"let g:airline_skip_empty_sections =  1
+
+"Surround.vim
+  let g:loaded_matchit = 1
+"Surround.vim
+
+
+
