@@ -95,46 +95,12 @@ autocmd FileType NvimTree setlocal winhighlight=Normal:NvimTreeNormal
 "  autocmd!
 "  autocmd VimEnter * Neotree
 "augroup END
+  hi NeoTreeNormal guibg=#1E1E2E
+  hi NeoTreeNormalNC guibg=#1E1E2E
 "Neotree
 
 " BarBar
 " BarBar
-
-" Dashboard
-" Enable the dashboard
-let g:dashboard_enable_at_startup =  1
-
-" Custom header
-let g:dashboard_custom_header = {
-\ 'type': 'text',
-\ 'content': ['Hello, World!']
-\ }
-
-" Dashboard footer
-let g:dashboard_footer_icon = '😄'
-let g:dashboard_footer_desc = {
-\ 'type': 'text',
-\ 'content': ['Dashboard Footer Description']
-\ }
-
-" Session load path
-let g:dashboard_session_directory = $HOME . "/.config/nvim/session"
-" Dashboard
-
-
-"let g:airline_theme='ayu_dark'                                                                                                             
-"let g:airline_powerline_fonts = 1                                                                                                         
-"let g:airline_section_b = '%{getcwd()}' " in section B of the status line display the CWD
-" Disable whitespace checks in Vim Airline
-"let g:airline#extensions#whitespace#enabled =  0
-
-" Set the current directory to display in the status line
-"let g:airline#extensions#branch#displayed_head_limit =  1
-"let g:airline#extensions#branch#format = '%{getcwd()}'
-
-" Remove trailing whitespace indicator from Vim Airline
-"let g:airline_skip_empty_sections =  1
-
 "Surround.vim
   let g:loaded_matchit = 1
 "Surround.vim
