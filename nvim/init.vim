@@ -13,8 +13,16 @@
 :set splitbelow
 :set splitright
 
+highlight Normal guibg=none
+highlight NonText guibg=none
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+
+
 call plug#begin('/home/alha/.config/nvim/plugged')
 
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'mhartington/formatter.nvim',
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
@@ -68,13 +76,19 @@ inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 
 :set completeopt-=preview " For No Previews
 :colorscheme catppuccin-mocha
+"theme background opacity
+hi Normal guibg=NONE ctermbg=NONE 
+hi NonText guibg=NONE ctermbg=NONE
 ":colorscheme onedark
 
-let g:coc_node_path = '/usr/bin/node'
+let g:coc_node_path = system("whereis node | awk '{print $2}' | tr -d '\n'")
 
 " Neotree
 autocmd QuitPre * if tabpagenr('$') ==  1 && winnr('$') ==  1 && exists('b:Neotree') && b:Neotree.isTabTree() | quitall | endif
 autocmd BufEnter * if exists(':Neotree close') | :Neotree close | endif
+autocmd ColorScheme * highlight NvimTreeNormal guibg=#2B4252
+autocmd FileType NvimTree setlocal winhighlight=Normal:NvimTreeNormal
+
 
 "augroup NeotreeOnStart
 "  autocmd!
@@ -124,5 +138,5 @@ let g:dashboard_session_directory = $HOME . "/.config/nvim/session"
   let g:loaded_matchit = 1
 "Surround.vim
 
-
-
+" set filetypes as typescriptreact
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
