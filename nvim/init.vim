@@ -72,6 +72,7 @@ nnoremap <C-Right> :bnext<CR>
 nnoremap <C-w> :BufferClose<CR>
 
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 " Mapping
 
 :set completeopt-=preview " For No Previews
