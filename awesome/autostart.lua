@@ -4,9 +4,9 @@ programs = {
     "flameshot",
     "variety",
     "udiskie",
-    "picom --daemon"
+    "nitrogen --restore",
 }
 
-for i,program in ipairs(programs) do
-    awful.spawn.with_shell("pgrep -u $USER -x " .. program .." > /dev/null || (".. program .." &)")
+for i, program in ipairs(programs) do
+    awful.spawn.with_shell("pgrep -u $USER -x " .. program .. " > /dev/null || (" .. program .. " &)")
 end

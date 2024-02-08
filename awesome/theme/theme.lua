@@ -8,27 +8,27 @@ local theme = {}
 theme.dir = os.getenv("HOME") .. "/.config/awesome/theme"
 
 -- Colors
-theme.xbackground = xrdb.background 
-theme.xforeground = xrdb.foreground 
-theme.xcolor0     = xrdb.color0     
-theme.xcolor1     = xrdb.color1     
-theme.xcolor2     = xrdb.color2     
-theme.xcolor3     = xrdb.color3     
-theme.xcolor4     = xrdb.color4     
-theme.xcolor5     = xrdb.color5     
-theme.xcolor6     = xrdb.color6     
-theme.xcolor7     = xrdb.color7     
-theme.xcolor8     = xrdb.color8     
-theme.xcolor9     = xrdb.color9     
-theme.xcolor10    = xrdb.color10    
-theme.xcolor11    = xrdb.color11    
-theme.xcolor12    = xrdb.color12    
-theme.xcolor13    = xrdb.color13    
-theme.xcolor14    = xrdb.color14    
-theme.xcolor15    = xrdb.color15    
+theme.xbackground = xrdb.background
+theme.xforeground = xrdb.foreground
+theme.xcolor0 = xrdb.color0
+theme.xcolor1 = xrdb.color1
+theme.xcolor2 = xrdb.color2
+theme.xcolor3 = xrdb.color3
+theme.xcolor4 = xrdb.color4
+theme.xcolor5 = xrdb.color5
+theme.xcolor6 = xrdb.color6
+theme.xcolor7 = xrdb.color7
+theme.xcolor8 = xrdb.color8
+theme.xcolor9 = xrdb.color9
+theme.xcolor10 = xrdb.color10
+theme.xcolor11 = xrdb.color11
+theme.xcolor12 = xrdb.color12
+theme.xcolor13 = xrdb.color13
+theme.xcolor14 = xrdb.color14
+theme.xcolor15 = xrdb.color15
 
 -- Fonts
-theme.font = "Roboto Medium 9"
+theme.font = "JetBrainsMono Nerd Font Mono 12"
 theme.taglist_font = "Roboto Bold 9"
 theme.iconFont = "Font Awesome 5 Free Regular 12"
 
@@ -56,8 +56,7 @@ theme.taglist_bg_urgent = theme.xcolor1
 theme.taglist_fg_urgent = theme.xcolor15
 theme.taglist_spacing = dpi(0)
 
-
-theme.awesome_icon = theme.dir .."/icons/awesome.png"
+theme.awesome_icon = theme.dir .. "/icons/awesome.png"
 theme.layout_tile = theme.dir .. "/icons/tile.png"
 theme.layout_tileleft = theme.dir .. "/icons/tileleft.png"
 theme.layout_tilebottom = theme.dir .. "/icons/tilebottom.png"
