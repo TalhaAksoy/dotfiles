@@ -32,7 +32,7 @@ Plug 'https://github.com/chikko80/error-lens.nvim',
 Plug 'vim-airline/vim-airline-themes',
 Plug 'glepnir/dashboard-nvim', { 'branch': 'master' }
 Plug 'https://github.com/nvim-lua/plenary.nvim',
-Plug 'https://github.com/nvim-neo-tree/neo-tree.nvim',
+" Plug 'https://github.com/nvim-neo-tree/neo-tree.nvim',
 Plug 'MunifTanjim/nui.nvim',
 Plug 'http://github.com/tpope/vim-surround',
 Plug 'https://github.com/tpope/vim-commentary', " For Commenting gcc & gc
@@ -58,7 +58,7 @@ Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 call plug#end()
 
 "lua require('mason_config')
-lua require('nvim-tree_config')
+"lua require('nvim-tree_config')
 lua require('error-lens_config')
 "source ./minimalist.vim
 
@@ -99,8 +99,6 @@ let g:coc_node_path = system("whereis node | awk '{print $2}' | tr -d '\n'")
 autocmd VimEnter * NERDTree | wincmd p
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 "autocmd QuitPre * if tabpagenr('$') ==  1 && winnr('$') ==  1 && exists('b:Neotree') && b:Neotree.isTabTree() | quitall | endif
-autocmd BufEnter * if exists(':Neotree close') | :Neotree close | endif
-"autocmd ColorScheme * highlight NvimTreeNormal guibg=#2B4252 change background only neotree
 "autocmd FileType NvimTree setlocal winhighlight=Normal:NvimTreeNormal
 
 
