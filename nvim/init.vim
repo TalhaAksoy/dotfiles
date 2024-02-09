@@ -18,7 +18,6 @@ highlight NonText guibg=none
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
 
-
 call plug#begin('/home/alha/.config/nvim/plugged')
 
 Plug 'leafgarland/typescript-vim'
@@ -44,10 +43,10 @@ Plug 'https://github.com/ryanoasis/vim-devicons', " Developer Icons
 Plug 'https://github.com/tc50cal/vim-terminal', " Vim Terminal
 Plug 'https://github.com/preservim/tagbar', " Tagbar for code navigation
 Plug 'https://github.com/terryma/vim-multiple-cursors', " CTRL + N for multiple cursors
-Plug 'williamboman/mason.nvim',
-Plug 'williamboman/mason-lspconfig.nvim',
-Plug 'neovim/nvim-lspconfig',
-Plug 'kabouzeid/nvim-lspinstall',
+"Plug 'williamboman/mason.nvim',
+"Plug 'williamboman/mason-lspconfig.nvim',
+"Plug 'neovim/nvim-lspconfig',
+"Plug 'kabouzeid/nvim-lspinstall',
 Plug 'lewis6991/gitsigns.nvim', " OPTIONAL: for git status
 Plug 'nvim-tree/nvim-web-devicons', " OPTIONAL: for file icons
 Plug 'romgrk/barbar.nvim',
@@ -57,7 +56,7 @@ Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
 call plug#end()
 
-lua require('mason_config')
+"lua require('mason_config')
 lua require('nvim-tree_config')
 lua require('error-lens_config')
 "source ./minimalist.vim
@@ -73,6 +72,17 @@ nnoremap <C-w> :BufferClose<CR>
 
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+
+
+""inoremap " ""<left>
+""inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+
+
 " Mapping
 
 :set completeopt-=preview " For No Previews
