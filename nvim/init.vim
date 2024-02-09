@@ -118,3 +118,5 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 
 " set filetypes as typescriptreact
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
+"Coc-prettier pre required for line 122 autocmd
+autocmd BufWritePost *.ts,*.tsx,*.js,*.jsx,*.json,*.graphql,*.hbs :CocCommand prettier.formatFile
