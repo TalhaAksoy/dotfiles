@@ -20,6 +20,7 @@ highlight NonText ctermbg=none
 
 call plug#begin('/home/alha/.config/nvim/plugged')
 
+Plug 'preservim/nerdtree',
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -62,7 +63,7 @@ lua require('error-lens_config')
 "source ./minimalist.vim
 
 " Mapping
-nnoremap <f5> :Neotree toggle reveal position=float<CR>
+nnoremap <f5> :NERDTreeFocus<CR>
 nnoremap <F8> :TagbarToggle<CR>
 nnoremap <C-j> <C-w>h
 nnoremap <C-l> <C-w>l
@@ -79,8 +80,8 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
+"inoremap {<CR> {<CR>}<ESC>O
+"inoremap {;<CR> {<CR>};<ESC>O
 
 
 " Mapping
@@ -94,11 +95,13 @@ hi NonText guibg=NONE ctermbg=NONE
 
 let g:coc_node_path = system("whereis node | awk '{print $2}' | tr -d '\n'")
 
-" Neotree
-autocmd QuitPre * if tabpagenr('$') ==  1 && winnr('$') ==  1 && exists('b:Neotree') && b:Neotree.isTabTree() | quitall | endif
+" NerdTree
+autocmd VimEnter * NERDTree | wincmd p
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+"autocmd QuitPre * if tabpagenr('$') ==  1 && winnr('$') ==  1 && exists('b:Neotree') && b:Neotree.isTabTree() | quitall | endif
 autocmd BufEnter * if exists(':Neotree close') | :Neotree close | endif
-autocmd ColorScheme * highlight NvimTreeNormal guibg=#2B4252
-autocmd FileType NvimTree setlocal winhighlight=Normal:NvimTreeNormal
+"autocmd ColorScheme * highlight NvimTreeNormal guibg=#2B4252 change background only neotree
+"autocmd FileType NvimTree setlocal winhighlight=Normal:NvimTreeNormal
 
 
 "augroup NeotreeOnStart
