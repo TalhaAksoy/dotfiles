@@ -1,4 +1,11 @@
 return {
+  'neoclide/coc.nvim',
+  branch = 'release',
+  config = function()
+  end
+}
+
+--[[return {
     {
         "hrsh7th/cmp-nvim-lsp",
         'hrsh7th/cmp-buffer',
@@ -46,4 +53,4 @@ return {
             })
         end,
     },
-}
+}]]

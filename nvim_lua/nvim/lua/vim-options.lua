@@ -33,4 +33,8 @@ inoremap { {}<left>
 "inoremap {<CR> {<CR>}<ESC>O
 "inoremap {;<CR> {<CR>};<ESC>O
 ]])
+vim.cmd([[
+inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+]])
 vim.g.mapleader = " "

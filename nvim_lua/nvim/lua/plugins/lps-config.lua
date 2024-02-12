@@ -22,7 +22,7 @@ return {
 		lazy = false,
 		config = function()
 			local lspconfig = require("lspconfig")
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+		--[[	local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
@@ -35,7 +35,7 @@ return {
 			})
 			lspconfig.tailwindcss.setup({
 				capabilities = capabilities,
-			})
+			}) ]]
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {}) -- if u not in uppercase mod press shift + k
 			vim.keymap.set("n", "<leader>p", vim.lsp.buf.code_action, {})
 		end,
